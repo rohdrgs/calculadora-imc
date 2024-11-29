@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import androidx.lifecycle.findViewTreeViewModelStoreOwner
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 
 class MainActivity : AppCompatActivity() {
@@ -30,15 +31,32 @@ class MainActivity : AppCompatActivity() {
             val pesoStr: String = edtPeso.text.toString()
             val alturaStr: String = edtAltura.text.toString()
 
+            if (pesoStr == "" || alturaStr == "") {
+                // Mostrar mensagem para usuário
 
-            val peso: Float = edtPeso.text.toString().toFloat()
-            val altura: Float = edtAltura.text.toString().toFloat()
+             Snackbar
+                 .make(
+                     edtPeso,
+                     " Preencha todos os dados",
+                 Snackbar.LENGTH_LONG
 
-            val alturaQ2 = altura * altura
-            val resultado = peso / alturaQ2
+             )
+                 .show()
 
 
-            println("RODRIGO ASSUNÇÃO" + resultado)
+
+            } else {
+
+
+                val peso = pesoStr.toFloat()
+                val altura = alturaStr.toFloat()
+
+                val alturaQ2 = altura * altura
+                val resultado = peso / alturaQ2
+
+
+                println("RODRIGO ASSUNÇÃO" + resultado)
+            }
         }
 
 
