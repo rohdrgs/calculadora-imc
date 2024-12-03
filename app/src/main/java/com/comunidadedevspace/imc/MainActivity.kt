@@ -1,7 +1,9 @@
 package com.comunidadedevspace.imc
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Telephony.Mms.Intents
 import android.widget.Button
 import androidx.lifecycle.findViewTreeViewModelStoreOwner
 import com.google.android.material.snackbar.Snackbar
@@ -38,7 +40,7 @@ class MainActivity : AppCompatActivity() {
                  .make(
                      edtPeso,
                      " Preencha todos os dados",
-                 Snackbar.LENGTH_LONG
+                     Snackbar.LENGTH_LONG
 
              )
                  .show()
@@ -53,6 +55,11 @@ class MainActivity : AppCompatActivity() {
 
                 val alturaQ2 = altura * altura
                 val resultado = peso / alturaQ2
+
+
+                val intent = Intent (this, ResultActivity::class.java )
+                intent.putExtra( KEY_RESULT_IMC, resultado)
+                startActivity(intent)
 
 
                 println("RODRIGO ASSUNÇÃO" + resultado)
