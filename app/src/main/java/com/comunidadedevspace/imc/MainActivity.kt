@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
 
 
-                println("RODRIGO ASSUNÇÃO" + resultado)
+
             }
         }
 
