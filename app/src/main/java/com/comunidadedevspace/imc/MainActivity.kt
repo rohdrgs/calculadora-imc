@@ -14,19 +14,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Recuperar componentes EditText
-        // Criar uma variavel e associar (=) o componente de UI <EditText>
-
-
 
         val edtPeso = findViewById<TextInputEditText>(R.id.edit_peso)
         val edtAltura = findViewById<TextInputEditText>(R.id.edt_altura)
 
         val btnCalcular = findViewById<Button>(R.id.btn_Calcular)
-
-
-
-
 
         btnCalcular.setOnClickListener {
 
@@ -34,21 +26,16 @@ class MainActivity : AppCompatActivity() {
             val alturaStr: String = edtAltura.text.toString()
 
             if (pesoStr == "" || alturaStr == "") {
-                // Mostrar mensagem para usuário
 
              Snackbar
                  .make(
                      edtPeso,
                      " Preencha todos os dados",
                      Snackbar.LENGTH_LONG
-
              )
                  .show()
 
-
-
             } else {
-
 
                 val peso = pesoStr.toFloat()
                 val altura = alturaStr.toFloat()
@@ -56,12 +43,9 @@ class MainActivity : AppCompatActivity() {
                 val alturaQ2 = altura * altura
                 val resultado = peso / alturaQ2
 
-
                 val intent = Intent (this, ResultActivity::class.java )
                 intent.putExtra( KEY_RESULT_IMC, resultado)
                 startActivity(intent)
-
-
 
             }
         }
