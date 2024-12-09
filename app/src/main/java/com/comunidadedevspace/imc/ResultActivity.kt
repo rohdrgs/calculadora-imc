@@ -1,9 +1,12 @@
 package com.comunidadedevspace.imc
 
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
+import androidx.annotation.ColorInt
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.graphics.toColorInt
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
@@ -28,6 +31,7 @@ class ResultActivity : AppCompatActivity() {
         } else if ( result > 25f && result <= 29.9f) {
             "SOBREPESO"
         } else if ( result > 30f && result <= 39.9f) {
+
             "OBESIDADE"
         } else {
             "OBESIDADE GRAVE"
